@@ -13,11 +13,37 @@
     */
 
     //ENTRADA
+    let salario = 0;
+    let idade = 0;
+    let sexo = 0;
 
+    let idades = [];
+    let salarios = [];
+    let mulheres = [];
+
+    let mediaS = 0;
 
     //PROCESSAMENTO
+    do{
+        salario = Number(prompt("De quanto é o seu Salário?"));
+        salarios.push(salario);
 
+        idade = Number(prompt("Qual a sua idade?"));
+        idades.push(idade);
+
+        sexo = prompt("Qual o seu sexo (M) masculino ou (F) Feminino").toLowerCase();
+
+        if(sexo == "f"){
+            mulheres.push(sexo);
+        }
+    }while(idade >= 0);
+
+    for(let item of salario){
+        mediaS += item
+    }
+    mediaS = mediaS / salarios.length;
 
     //SAÍDA
+    alert(`A média dos Salários dos grupos é ${mediaS} \n A menor idade é`)
 
 </script>
