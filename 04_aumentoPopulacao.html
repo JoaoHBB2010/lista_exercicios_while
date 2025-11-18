@@ -6,11 +6,16 @@
     */
 
     //ENTRADA
-
-
+    pA = 80000;
+    pB = 200000;
     //PROCESSAMENTO
+    do{
+        pB += pB * 0.015
+        pA += pA * 0.03
+    }while(pA < pB)
 
 
     //SAÍDA
+    console.log(pA,pB);
 
 </script>
