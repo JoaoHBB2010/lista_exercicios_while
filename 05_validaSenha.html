@@ -6,11 +6,15 @@
     */
 
     //ENTRADA
-
+    let senha = Number(prompt("Forma uma Senha com 4 numeros inteiros."));
 
     //PROCESSAMENTO
-
+    while(senha >= 10000 || senha <= 999 || senha % 1 !== 0){
+        alert("SENHA INCORRETA");
+        senha = Number(prompt("Forma uma Senha com 4 numeros inteiros."));
+    }
 
     //SAÍDA
+    alert("Senha correta");
 
 </script>
