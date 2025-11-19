@@ -13,37 +13,49 @@
     */
 
     //ENTRADA
-    let salario = 0;
+    let mediaSalarios = 0;
+    let somaSalarios = 0;
+    let quantidadePessoas = 0;
+    let maiorIdade = 0;
+    let menorIdade = 200;
+    let quantidadeMulheres = 0;
+    let menorSalario = 150000;
+    let idadeMenorSalario = 0;
+    let generoMenorSalario = 0;
     let idade = 0;
-    let sexo = 0;
-
-    let idades = [];
-    let salarios = [];
-    let mulheres = [];
-
-    let mediaS = 0;
 
     //PROCESSAMENTO
-    do{
-        salario = Number(prompt("De quanto é o seu Salário?"));
-        salarios.push(salario);
-
-        idade = Number(prompt("Qual a sua idade?"));
-        idades.push(idade);
-
-        sexo = prompt("Qual o seu sexo (M) masculino ou (F) Feminino").toLowerCase();
-
-        if(sexo == "f"){
-            mulheres.push(sexo);
+    while (idade >= 0) {
+        idade = Number(prompt(`Informe a idade da pessoa:`));
+        if (idade >=0) {
+            let genero = prompt(`Informe o gênero: F|M`).toUpperCase();
+            let salario = Number(prompt(`Informe o salário:`));
+            somaSalarios = somaSalarios + salario;
+            quantidadePessoas = quantidadePessoas + 1;
+            if (idade > maiorIdade) {
+                maiorIdade = idade;
+            }
+            if (idade < menorIdade) {
+                menorIdade = idade;
+            }
+            if (salario < menorSalario) {
+                idadeMenorSalario = idade;
+                generoMenorSalario = genero;
+                menorSalario = salario;
+            }
+            if (genero == "F") {
+                quantidadeMulheres = quantidadeMulheres + 1;
+            }
         }
-    }while(idade >= 0);
-
-    for(let item of salario){
-        mediaS += item
     }
-    mediaS = mediaS / salarios.length;
+
+    mediaSalarios = somaSalarios / quantidadePessoas;
 
     //SAÍDA
-    alert(`A média dos Salários dos grupos é ${mediaS} \n A menor idade é`)
-
+    document.write(`A média de salaŕios do grupo é: R$ ${mediaSalarios.toFixed(2)}<br>`);
+    document.write(`A maior idade do grupo é ${maiorIdade} anos<br>`);
+    document.write(`A menor idade do grupo é ${menorIdade} anos<br>`);
+    document.write(`A quantidade de mulheres na região é ${quantidadeMulheres}<br>`);
+    document.write(`A idade da pessoa com o menor salário é ${idadeMenorSalario} anos<br>`);
+    document.write(`O gênero da pessoa com o menor salário é ${generoMenorSalario}`);
 </script>

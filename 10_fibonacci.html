@@ -1,15 +1,36 @@
 <script>
-    //Problema: Fibonacci
-    /*
+  //Problema: Fibonacci
+  /*
     Pergunte ao usuário quantos números da sequência de Fibonacci deseja obter, usando a estrutura de repetição while.
     */
 
-    //ENTRADA
+  //ENTRADA
+  const sequencia = Number(
+    prompt(`"Quantos numeros da sequencia fibonacci você deseja obter?`)
+  );
 
+  //PROCESSAMENTO
+  let n0 = 0;
+  let n1 = 1;
+  let n;
+  let array = [];
 
-    //PROCESSAMENTO
+  if (sequencia >= 1) {
+    array.push(n0);
+  }
+  if (sequencia >= 2) {
+    array.push(n1);
+  }
+  while (array.length < sequencia) {
+    const proximoN = n0 + n1;
 
+    array.push(proximoN);
 
-    //SAÍDA
-    
+    n0 = n1;
+
+    n1 = proximoN;
+  }
+
+  //SAÍDA
+  document.write(array.join("<br>"));
 </script>
